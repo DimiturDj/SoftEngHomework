@@ -1,0 +1,378 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Music Library API",
+    "description": "API for managing albums and user authentication"
+  },
+  "host": "localhost:3030",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "securityDefinitions": {
+    "token": {
+      "type": "apiKey",
+      "name": "X-Authorization",
+      "in": "header"
+    }
+  },
+  "tags": [
+    {
+      "name": "Music Library Albums"
+    },
+    {
+      "name": "Music Library User"
+    }
+  ],
+  "paths": {
+    "/users/register": {
+      "post": {
+        "tags": [
+          "Music Library User"
+        ],
+        "description": "Register a new user",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User object that needs to be registered",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful response",
+            "schema": {
+              "title": "string"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "tags": [
+          "Music Library User"
+        ],
+        "description": "Login and get a token",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "body",
+            "description": "Login object containing username and password",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "token": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/data/albums": {
+      "get": {
+        "tags": [
+          "Music Library Albums"
+        ],
+        "description": "List all albums",
+        "parameters": [
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Sort the albums by created date in descending order",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "singer": {
+                  "type": "string"
+                },
+                "album": {
+                  "type": "string"
+                },
+                "imageUrl": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "sales": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Music Library Albums"
+        ],
+        "description": "...",
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "album",
+            "in": "body",
+            "description": "...",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "...": {
+                  "type": "string"
+                },
+                "...": {
+                  "type": "string"
+                },
+                "...": {
+                  "type": "string"
+                },
+                "...": {
+                  "type": "string"
+                },
+                "...": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful response",
+            "schema": {
+              "title": "string"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "...": {
+      "put": {
+        "tags": [
+          "Music Library Albums"
+        ],
+        "description": "Update an album",
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "...",
+            "in": "path",
+            "description": "ID of album to update",
+            "required": true,
+            "type": "..."
+          },
+          {
+            "name": "album",
+            "in": "body",
+            "description": "Album object that needs to be updated",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "title": "string"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Album not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Music Library Albums"
+        ],
+        "description": "...",
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "...",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful response"
+          },
+          "404": {
+            "description": "Album not found"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Music Library Albums"
+        ],
+        "description": "...", 
+        "parameters": [
+          {
+            "name": "{name}",
+            "in": "path",
+            "description": "(description)",
+            "required": true,
+            "type": "(type)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "title": "string"
+            }
+          },
+          "404": {
+            "description": "Album not found"
+          }
+        }
+      }
+    },
+    "/data/likes": {
+      "post": {
+        "tags": [
+          "Music Library Albums"
+        ],
+        "description": "Add a like to an album",
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "like",
+            "in": "body",
+            "description": "Object containing the album ID",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "albumId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Music Library Albums"
+        ],
+        "description": "Get the total likes count for an album or number of likes for an album for specific user",
+        "parameters": [
+          {
+            "name": "albumId",
+            "in": "query",
+            "description": "The filter for likes",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "The filter for likes",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    }
+  }
+}
