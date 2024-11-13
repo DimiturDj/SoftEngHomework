@@ -1,5 +1,5 @@
 Music Library
-Welcome! 👋 This is the Music Library app—a Single Page Application (SPA) that lets users browse, create, and manage a catalog of music albums. Whether you’re a music enthusiast wanting to explore albums or a curator managing a collection, this app provides an easy and efficient way to work with music album data.
+This is the Music Library app—a Single Page Application (SPA) that lets users browse, create, and manage a catalog of music albums. Whether you’re a music enthusiast wanting to explore albums or a curator managing a collection, this app provides an easy and efficient way to work with music album data.
 
 Table of Contents
 About the App
