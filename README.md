@@ -1,7 +1,7 @@
 🎶 Music Library 🎶
 
 This is the Music Library app—a Single Page Application (SPA) that lets users browse, create, and manage a catalog of music albums. 🎸🎼 Whether you’re a music enthusiast wanting to explore albums or a curator managing a collection, this app provides an easy and efficient way to work with music album data.
-![alt text](https://github.com/DimiturDj/SoftEngHomework/blob/main/image.png?raw=true)
+![alt text](https://github.com/DimiturDj/SoftEngHomework/blob/main/Image.png?raw=true)
 
 📖 Table of Contents
 
