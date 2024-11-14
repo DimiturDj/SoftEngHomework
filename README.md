@@ -7,10 +7,10 @@ This is the Music Library app—a Single Page Application (SPA) that lets users 
 📱 About the App
 ✨ Features
 📂 Endpoints Overview
-GET /data/albums/{id}
-POST /data/albums
-PUT /data/albums/{id}
-DELETE /data/albums/{id}
+GET ```/data/albums/{id}```
+POST ```/data/albums```
+PUT ```/data/albums/{id}```
+DELETE ```/data/albums/{id}```
 🔒 Authentication
 ⚠️ Error Handling
 📝 Examples
@@ -29,7 +29,7 @@ Delete Albums: 🗑️ Remove albums from the library when they are no longer ne
 📂 Endpoints Overview
 Here's a quick overview of the key endpoints in the app's backend. These are used by the app to handle all the album data management tasks.
 
-📥 GET /data/albums/{id}
+📥 GET ```/data/albums/{id}```
 This endpoint retrieves details about a specific album by its ID.
 
 Purpose: Fetch album details by ID.
@@ -42,37 +42,37 @@ Responses:
 This endpoint allows users to add a new album to the catalog.
 
 Purpose: Add a new album.
-Body:
-album (object, required): Album details.
-singer (string): Artist's name.
-album (string): Title of the album.
-label (string): Record label.
-sales (string): Sales data, such as the number of copies sold.
+```Body:```
+```album (object, required): Album details.```
+```singer (string): Artist's name.```
+```album (string): Title of the album.```
+```label (string): Record label.```
+```sales (string): Sales data, such as the number of copies sold.```
 Responses:
 🟢 200 OK: Album successfully added.
 🔴 400 Bad Request: Invalid or missing data.
-✏️ PUT /data/albums/{id}
+✏️ PUT ```/data/albums/{id}```
 This endpoint updates an existing album.
 
 Purpose: Update album details.
 Parameters:
-id (string, required): The ID of the album to update.
-Body:
-album (object, required): Updated album details.
-singer (string): New artist name.
-album (string): New album title.
-label (string): New record label.
-sales (string): Updated sales information.
+```id (string, required): The ID of the album to update.```
+```Body:```
+```album (object, required): Updated album details.```
+```singer (string): New artist name.```
+```album (string): New album title.```
+```label (string): New record label.```
+```sales (string): Updated sales information.```
 Responses:
 🟢 200 OK: Successfully updated.
 🔴 404 Not Found: No album found with that ID.
 🔴 400 Bad Request: Invalid data provided.
-🗑️ DELETE /data/albums/{id}
+🗑️ DELETE ```/data/albums/{id}```
 This endpoint deletes an album from the catalog.
 
 Purpose: Remove an album.
 Parameter:
-id (string, required): The ID of the album to delete.
+```id (string, required): The ID of the album to delete.```
 Responses:
 🟢 200 OK: Album successfully deleted.
 🔴 404 Not Found: No album found with that ID.
@@ -81,8 +81,8 @@ Some actions (like adding, updating, or deleting albums) require an authenticati
 
 makefile
 Copy code
-Authorization: Bearer <your-token-here>
-Replace <your-token-here> with your actual token. If you don’t include a valid token, you won’t be able to perform these actions.
+Authorization:``` Bearer <your-token-here>```
+Replace``` <your-token-here> ```with your actual token. If you don’t include a valid token, you won’t be able to perform these actions.
 
 ⚠️ Error Handling
 The app's backend responds with standard HTTP status codes:
